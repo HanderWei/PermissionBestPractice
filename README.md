@@ -1,7 +1,7 @@
 # Android M 权限最佳实践
 
 ## 权限申请流程
-[权限申请流程](http://7xs83t.com1.z0.glb.clouddn.com/Android%20M%20%E6%9D%83%E9%99%90%E7%94%B3%E8%AF%B7%28%E6%97%A0%E9%9C%80%E4%BF%9D%E5%AD%98%E7%8A%B6%E6%80%81%29.png)
+![权限申请流程](http://7xs83t.com1.z0.glb.clouddn.com/Android%20M%20%E6%9D%83%E9%99%90%E7%94%B3%E8%AF%B7%28%E6%97%A0%E9%9C%80%E4%BF%9D%E5%AD%98%E7%8A%B6%E6%80%81%29.png)
 
 ## 封装EasePermissions
 
