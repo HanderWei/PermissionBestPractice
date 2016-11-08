@@ -22,10 +22,7 @@ public class TestActivity extends BaseActivity {
     private static final int REQUEST_CAMERA_PERMISSION = 0x01;
     private static final int REQUEST_CALENDAR_AND_CONTACTS = 0x02;
 
-    /**
-     * 请求相机
-     */
-    private static final int REQUEST_IMAGE_CAPTURE = 0x11;
+    private static final int REQUEST_OPEN_CAMERA = 0x11;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,7 +43,7 @@ public class TestActivity extends BaseActivity {
     private void openCamera() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
+            startActivityForResult(intent, REQUEST_OPEN_CAMERA);
         }
     }
 
