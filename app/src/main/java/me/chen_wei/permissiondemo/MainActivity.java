@@ -6,17 +6,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity {
 
@@ -37,7 +36,7 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_test);
         mLayout = (RelativeLayout) findViewById(R.id.main_layout);
     }
 
@@ -50,13 +49,15 @@ public class MainActivity extends FragmentActivity {
     }
 
     /**
-     * 打开相机
+//     * 打开相机
+     * Just Show a Toast
      */
     private void openCamera() {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
-        }
+        Toast.makeText(getApplicationContext(), "I got the permission!", Toast.LENGTH_SHORT).show();
+//        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//        if (intent.resolveActivity(getPackageManager()) != null) {
+//            startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
+//        }
     }
 
     /**

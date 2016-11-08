@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PermissionDemo</string>
+
+    <string name="rationale_camera">需要相机权限</string>
+    <string name="rationale_calendar_and_contacts">需要读取日历和联系人权限</string>
+    <string name="rationale">此功能必须要该权限，请在设置界面勾选</string>
+    <string name="rationale_title">权限申请</string>
 </resources>
