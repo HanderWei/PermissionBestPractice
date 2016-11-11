@@ -1,6 +1,9 @@
-# Android M 权限最佳实践
+## 博客
+
+[Android M 权限最佳实践](http://chen-wei.me/2016/11/10/android-permission-best-practice/)
 
 ## 权限申请流程
+
 ![权限申请流程](http://7xs83t.com1.z0.glb.clouddn.com/Android%20M%20%E6%9D%83%E9%99%90%E7%94%B3%E8%AF%B7%28%E6%97%A0%E9%9C%80%E4%BF%9D%E5%AD%98%E7%8A%B6%E6%80%81%29.png)
 
 ## EasyPermissions
@@ -71,5 +74,10 @@ public class BaseFragment extends Fragment implements PermissionUtils.Permission
     }
 }
 ```
-BaseFragment同样实现了*PermissionUtils.PermissionCallbacks*接口，覆写了*onRequestPermissionsResult()*方法，但是并未处理**不在询问**的情况，原因很简单，因为BaseActivity会统一处理
+
+BaseFragment同样实现了*PermissionUtils.PermissionCallbacks*接口，覆写了*onRequestPermissionsResult()*方法，但是并未处理**不在询问**的情况，在Activity中统一处理。
+
+> 注意：实际使用时，需要在BaseFragment的`onPermissionDenied()`回调中对勾选“不再询问”进行处理。
+
+> 如果存在Activity以及其包含的Fragment同时需要申请权限，则应该在Activity统一处理，防止弹出两个Dialog
 
