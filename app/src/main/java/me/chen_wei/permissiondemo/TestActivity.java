@@ -32,7 +32,7 @@ public class TestActivity extends BaseActivity {
 
 
     public void needCamera(View view) {
-        if (PermissionUtils.hasPermisssions(this, Manifest.permission.CAMERA)) {
+        if (PermissionUtils.hasPermissions(this, Manifest.permission.CAMERA)) {
             openCamera();
         } else {
             PermissionUtils.requestPermissions(this, getString(R.string.rationale_camera), REQUEST_CAMERA_PERMISSION, Manifest.permission.CAMERA);
@@ -49,7 +49,7 @@ public class TestActivity extends BaseActivity {
 
     public void needTwoPermissions(View view) {
         String[] perms = new String[]{Manifest.permission.READ_CALENDAR, Manifest.permission.READ_CONTACTS};
-        if (PermissionUtils.hasPermisssions(this, perms)) {
+        if (PermissionUtils.hasPermissions(this, perms)) {
             twoPermissionsGranted();
         } else {
             PermissionUtils.requestPermissions(this, getString(R.string.rationale_calendar_and_contacts), REQUEST_CALENDAR_AND_CONTACTS, perms);

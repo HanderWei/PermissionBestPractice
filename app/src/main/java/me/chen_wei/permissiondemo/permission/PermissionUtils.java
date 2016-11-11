@@ -42,7 +42,7 @@ public class PermissionUtils {
 
     }
 
-    public static boolean hasPermisssions(Context context, String... perms) {
+    public static boolean hasPermissions(Context context, String... perms) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             return true;
         }

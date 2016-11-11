@@ -31,7 +31,7 @@ public class TestFragment extends BaseFragment {
         v.findViewById(R.id.btn_phone_state).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (PermissionUtils.hasPermisssions(getContext(), Manifest.permission.READ_PHONE_STATE)) {
+                if (PermissionUtils.hasPermissions(getContext(), Manifest.permission.READ_PHONE_STATE)) {
                     onPermissionGranted();
                 } else {
                     PermissionUtils.requestPermissions(TestFragment.this, "需要读取手机信息", REQUEST_PHONE_STATE, Manifest.permission.READ_PHONE_STATE);
