@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 
@@ -53,7 +54,8 @@ public class RationaleDialogFragment extends DialogFragment {
         mCallbacks = null;
     }
 
-    public Dialog onCreateDialog(Build savedInstanceState) {
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
         setCancelable(false);
 
         mConfig = new RationaleDialogConfig(getArguments());
