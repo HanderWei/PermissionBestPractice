@@ -7,7 +7,7 @@
         android:id="@+id/btn_phone_state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="读取手机权限"
+        android:text="读取手机状态"
         />
 
 </LinearLayout>

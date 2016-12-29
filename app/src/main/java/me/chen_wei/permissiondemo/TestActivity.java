@@ -1,15 +1,21 @@
 package me.chen_wei.permissiondemo;
 
 import android.Manifest;
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.provider.CalendarContract;
+import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Toast;
 
+
 import me.chen_wei.permissiondemo.permission.AfterPermissionGranted;
 import me.chen_wei.permissiondemo.permission.PermissionUtils;
+
 
 /**
  * author: Chen Wei
@@ -29,7 +35,6 @@ public class TestActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
     }
-
 
     public void needCamera(View view) {
         if (PermissionUtils.hasPermissions(this, Manifest.permission.CAMERA)) {
@@ -58,6 +63,19 @@ public class TestActivity extends BaseActivity {
 
     @AfterPermissionGranted(REQUEST_CALENDAR_AND_CONTACTS)
     private void twoPermissionsGranted() {
-        Toast.makeText(this, "授权成功", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "授权成功", Toast.LENGTH_SHORT).show();
+        ContentResolver cr = getContentResolver();
+        Cursor cur = cr.query(ContactsContract.Contacts.CONTENT_URI,
+                null, null, null, null);
+        Cursor calCur = cr.query(CalendarContract.Calendars.CONTENT_URI, null, null, null, null);
+        StringBuilder toast = new StringBuilder();
+        if (cur != null) {
+            toast.append("有" + cur.getCount() + "条联系人信息");
+        }
+
+        if (calCur != null) {
+            toast.append("\n有" + calCur.getCount() + "条日历信息");
+        }
+        Toast.makeText(this, toast.toString(), Toast.LENGTH_SHORT).show();
     }
 }
